@@ -29,3 +29,7 @@ rootProject.name = "spring"
 rootProject.children.each {project ->
 	project.buildFileName = "${project.name}.gradle"
 }
+include 'myspring-lession'
+include 'myspring-lession:spring-bean-demo'
+findProject(':myspring-lession:spring-bean-demo')?.name = 'spring-bean-demo'
+

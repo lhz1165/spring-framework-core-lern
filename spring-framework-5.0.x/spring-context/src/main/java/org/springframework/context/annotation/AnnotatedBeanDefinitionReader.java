@@ -219,8 +219,11 @@ public class AnnotatedBeanDefinitionReader {
 		}
 
 		abd.setInstanceSupplier(instanceSupplier);
+		//作用域
 		ScopeMetadata scopeMetadata = this.scopeMetadataResolver.resolveScopeMetadata(abd);
+		//singletone
 		abd.setScope(scopeMetadata.getScopeName());
+		//bean的名字 当前类名
 		String beanName = (name != null ? name : this.beanNameGenerator.generateBeanName(abd, this.registry));
 
 		AnnotationConfigUtils.processCommonDefinitionAnnotations(abd);
