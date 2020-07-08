@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="user" class="com.lhz.spring.context.entity.User" >
+		<!-- collaborators and configuration for this bean go here -->
+		<property name="id" value="1"/>
+		<property name="name" value="lhz"/>
+	</bean>
+
+	<bean id="superUser" class="com.lhz.spring.context.entity.SuperUser" parent="user" primary="true">
+		<property name="address" value="hangzhou"/>
+	</bean>
+
+	<bean class="com.lhz.di.demo.UserHolder">
+		<property name="user" ref="user"></property>
+	</bean>
+
+</beans>

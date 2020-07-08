@@ -18,6 +18,7 @@ package org.springframework.beans.factory.support;
 
 import java.util.function.Supplier;
 
+import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinitionCustomizer;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
 import org.springframework.lang.Nullable;
@@ -214,7 +215,8 @@ public class BeanDefinitionBuilder {
 	 * Add the supplied property value under the given property name.
 	 */
 	public BeanDefinitionBuilder addPropertyValue(String name, @Nullable Object value) {
-		this.beanDefinition.getPropertyValues().add(name, value);
+		MutablePropertyValues propertyValues = this.beanDefinition.getPropertyValues();
+		propertyValues.add(name, value);
 		return this;
 	}
 

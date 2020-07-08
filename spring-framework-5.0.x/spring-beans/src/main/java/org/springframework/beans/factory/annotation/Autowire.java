@@ -23,6 +23,10 @@ import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
  * have its dependencies automatically injected by the Spring container using
  * setter injection. This is a core concept in Spring DI.
  *
+ * 不能绑定原生类型或基本类型
+ * 缺乏精确性
+ * 存在多个bean，不知道绑定哪个对象  使用@parmary解决
+ *
  * <p>Available for use in annotation-based configurations, such as for the
  * AspectJ AnnotationBeanConfigurer aspect.
  *
@@ -36,6 +40,7 @@ public enum Autowire {
 
 	/**
 	 * Constant that indicates no autowiring at all.
+	 * 表示不自动绑定
 	 */
 	NO(AutowireCapableBeanFactory.AUTOWIRE_NO),
 
@@ -46,6 +51,7 @@ public enum Autowire {
 
 	/**
 	 * Constant that indicates autowiring bean properties by type.
+	 * 构造器也是特殊的bytype类型
 	 */
 	BY_TYPE(AutowireCapableBeanFactory.AUTOWIRE_BY_TYPE);
 

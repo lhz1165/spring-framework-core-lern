@@ -168,7 +168,8 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 */
 	public void scan(String... basePackages) {
 		Assert.notEmpty(basePackages, "At least one base package must be specified");
-		this.scanner.scan(basePackages);
+		int scan = this.scanner.scan(basePackages);
+		System.out.println("scan number is "+scan +" beandefinition");
 	}
 
 

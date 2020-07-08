@@ -34,7 +34,10 @@ public class AnnotationBeanDefinitionDemo {
 
 
 		//注册配置类 如果通过这个api  不需要使用component或import注解
-		beanFactory.register(User.class);
+		beanFactory.register(Config.class);
+
+		//通过scan扫描 如果有注解那么执行register方法
+		beanFactory.scan("com.lhz.spring.context.bean");
 
 		//4 通过api注册实现
 		registerBeanDefinition(beanFactory, "lhz11", User.class);

@@ -32,4 +32,6 @@ rootProject.children.each {project ->
 include 'myspring-lession'
 include 'myspring-lession:spring-bean-demo'
 findProject(':myspring-lession:spring-bean-demo')?.name = 'spring-bean-demo'
+include 'myspring-lession:dependency-injection'
+findProject(':myspring-lession:dependency-injection')?.name = 'dependency-injection'
 
